@@ -1,0 +1,293 @@
+body {
+	background-color: rgba(0,0,0,1);
+}
+@keyframes rotate {
+	from {
+
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+@media (max-width: 1200px) {
+	#display-pics {
+		width: 100% !important;
+	}
+
+}
+@media (max-width: 992px) {
+	#songbar>div>div:nth-child(2n+1) {
+		display: none !important;
+	}
+	#bar {
+		margin-top: -0.3rem;
+	}
+	
+}
+@media (min-width: 992px) {
+	nav{
+		position: relative;
+	}
+	ul.navbar-nav #favs {
+		margin-right: 10rem;
+	}
+	ul.navbar-nav #profilepic {
+		position: absolute;
+		right: 3%;
+	}
+	#pics-queue>div>div {
+	/*border-right-width: 2px;
+	border-right-style: solid;
+	border-right-color:black;*/
+	/*border-right-color: rgba(192,192,192,0.6);*/
+
+	}
+	#songbar {
+		visibility: visible;
+	}
+
+}
+@media (max-width: 991px) {
+	
+	ul.navbar-nav li {
+		margin-top: 1.4rem;
+	}
+	ul.navbar-nav #profilepic {
+		margin-top: 1.7rem;
+	}
+}
+
+
+/*Nav Bar styling ahead*/
+/*.....................*/
+
+.navdec {
+	/*background-image: linear-gradient(to left,rgb(21,21,21),rgba(0,0,0,0.5));*/
+	color: white;
+}
+a {
+	text-decoration: none;
+}
+.img-fit {
+	background-color: transparent;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	
+}
+#word:hover {
+	border-bottom: 2px solid orange;
+	transition: 0.5s ease-in-out;
+}
+.logo {
+	background-image: url(musicpics/logo.png);
+	background-size: contain;
+	animation: rotate 2s ease-in-out infinite;
+	width: 4.7rem;
+	height: 3rem;
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+#title {
+	background-color: transparent;
+	color: rgba(255,255,255,1);
+	height: 3rem;
+	display: inline-block;
+	font-weight: bolder;
+	font-family: 'Inner Vintage', sans-serif;
+                                               
+}
+#word {
+	padding-bottom: 0.3rem;
+	display: inline-block;
+}
+#title>div{
+	height: 50%;
+	width: 100%;
+}
+#hamburger {
+	color: white !important;
+	vertical-align: bottom !important;
+	padding-top: 0.5rem;
+
+}
+#profilepic {
+	background-image: url(musicpics/pp.jpg);
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+}
+#profilepic::after {
+	content: '';
+	border-radius: 50%;
+	height: 0.7rem;
+	width: 0.7rem;
+	display: inline-block;
+	background-color: red;
+	position: relative;
+	left: 2rem;
+	bottom: 0.5rem;
+}
+
+
+/*Pics Section*/
+/*............*/
+
+h1 {
+	text-align: center;
+	width: 100%;
+	color: white;
+	font-weight: bolder;
+	margin: auto;
+	
+}
+#artists {
+	width: 100%;
+	padding: 5%;
+}
+#artists>div{
+	display: inline-block;
+	width: 35%;
+	height: 0;
+	padding-bottom: 35%;
+	transition: all 0.2s ease-in-out;
+	position: relative;
+	z-index: 2;
+	
+}
+.text {
+	position: absolute;
+	top: 40%;
+   	left: 45%;
+   	bottom: 40%;
+   	right: 45%;
+   	text-align: center;
+   	color: white;
+   	scale: 1.4;
+
+}
+#artists>div:hover {
+	width: 43%;
+	height: 0;
+	padding-bottom: 43%;
+	box-shadow: 0.25rem 0.25rem 1.5rem rgba(240,240,240,1);
+	flex-grow: 2;
+}
+
+#drake {
+	background-image: url(musicpics/drake.jpg);
+	flex-shrink: 2;
+	background-position: top;
+}
+
+#honey {
+	background-image: url(musicpics/honey.jpg);
+	flex-shrink: 2;
+	background-position: top;
+}
+#ap {
+	background-image: url(musicpics/ap.jpeg);
+	flex-shrink: 2;
+}
+
+#popa,#le {
+	width: 100%;
+	padding: 5%;
+}
+
+#popa>div {
+	width: 16%;
+	height: 0;
+	padding-bottom: 16%;
+	transition: all 0.2s ease-in-out;
+	border-radius: 50%;
+	margin-right: 0.25rem;
+	background-image: url(musicpics/play.png);
+	background-size: 50% 50%;
+	z-index: 2;
+}
+
+.play{
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	border-radius: 50%;
+	z-index: 3;
+}
+div.play:hover {
+	opacity: 0.2;
+	z-index: 1;
+}
+/*Queue*/
+/*......*/
+#queue {
+	padding: 0 10% 0 10%;
+}
+#queue>div {
+	width: 100%;
+	height: 5rem;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.number {
+	color: white;
+	justify-content: center;
+	align-items: center;
+}
+div.dropdown:focus, a:focus {
+	outline-color: white !important;
+}
+
+/*latest sections*/
+#latest {
+	background-image: linear-gradient(to bottom, rgba(190,223,255,1),rgba(0,0,0,1)) !important;
+}
+#le>div {
+	background-color: rgba(21,21,21,0.8) ;
+}
+.le-img {
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+
+}
+
+/*songbar.....*/
+
+#songbar {
+	height: 8.8vh;
+	position: fixed;
+	bottom: 0;
+	background-color: rgb(21,21,21,1);
+	z-index: 6;
+}
+.songbars{
+	padding-left: 20%;
+}
+#songb-ctrl>div {
+	width: 15%;
+}
+#bar input {
+	width: 100%;
+	background: rgba(98,240,107) !important;
+	-webkit-appearance: none;
+	height:4px ;
+	margin-left: -1rem;
+}
+#menu>div{
+	width: 12%;
+	height: 50%;
+	color: white;
+	vertical-align: bottom;
+}
+#menu #vbar {
+	width: 24%;
+}
+#menu input {
+	width: 100%;
+	background: rgba(98,240,107) !important;
+	-webkit-appearance: none;
+	height:4px ;
+	margin-left: -0.4rem;
+	vertical-align: middle;
+}
