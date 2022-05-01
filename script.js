@@ -1,4 +1,5 @@
 
+window.alert("Please note that certain songs' files are down. Apologies for the inconvenience");
 // Code to Handle Play Button Clicking
 
 var pbutton=document.getElementById('pbutton')
