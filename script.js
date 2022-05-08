@@ -1,5 +1,16 @@
+var songsCollection=[]
+var songContainer=document.getElementsByClassName('playSong');
+var playingIndex=0;
+let helper={}
+for (let i = 0; i<songContainer.length;i++) {
+  let entry = songContainer[i].getAttribute('data-name')
+  if(!(entry in helper)){
+    helper[entry]=true;
+    songsCollection.push(entry)
+  }
+}
 
-window.alert("Please note that certain songs' files are down. Apologies for the inconvenience");
+
 // Code to Handle Play Button Clicking
 
 var pbutton=document.getElementById('pbutton')
@@ -50,7 +61,7 @@ var playing_name=document.getElementById('songName');
 var playing_duration=document.getElementById('songDuration');
 var ele=document.getElementById('audiotag')
 var pauseSong=true;
-var songContainer=document.getElementsByClassName('playSong')
+
 var playing_pic=document.getElementById('playing-pic');
 var same=null;
 
@@ -64,7 +75,11 @@ for(let obj of songContainer) {
 function playSong() {
 
   var name=this.getAttribute('data-name')
-  
+  for(let i = 0; i<songsCollection.length; i++) {
+    if(name==songsCollection[i]){
+      playingIndex=i;
+    }
+  }
 
   if(same!=name) {
     var path = "songs/"+name+".mp3"
@@ -94,6 +109,63 @@ function playSong() {
     }
   }
   
+
+}
+//Code to handle forward and backward buttons
+document.getElementById('step-back').addEventListener('click',goBack);
+document.getElementById('step-ahead').addEventListener('click',goAhead);
+
+function goBack() {
+  
+  if(playingIndex==0) {
+    playingIndex=songsCollection.length-1;
+  }
+  else{
+    playingIndex--;
+  }
+  let songName = songsCollection[playingIndex];
+  ele.setAttribute('src',"songs/"+songName+".mp3");
+
+  let element = null
+  for(let i of songContainer){
+    if(i.getAttribute('data-name')==songName){
+      element=i
+    }
+  }
+  playing_duration.innerHTML=element.getAttribute('data-time');
+  playing_name.innerHTML=element.getAttribute('data-name');
+  let logo_path=`url(${element.getAttribute('data-pic')})`;
+  playing_pic.style.backgroundImage=logo_path;
+  same=songName;
+  play=false
+  playing();
+  pauseSong=false;
+}
+
+function goAhead() {
+  if(playingIndex==songsCollection.length-1) {
+    playingIndex=0;
+  }
+  else {
+    playingIndex++;
+  }
+  let songName = songsCollection[playingIndex];
+  ele.setAttribute('src',"songs/"+songName+".mp3");
+
+  let element = null
+  for(let i of songContainer){
+    if(i.getAttribute('data-name')==songName){
+      element=i
+    }
+  }
+  playing_duration.innerHTML=element.getAttribute('data-time');
+  playing_name.innerHTML=element.getAttribute('data-name');
+  let logo_path=`url(${element.getAttribute('data-pic')})`;
+  playing_pic.style.backgroundImage=logo_path;
+  same=songName;
+  play=false
+  playing();
+  pauseSong=false;
 
 }
 

@@ -282,11 +282,17 @@ div.dropdown:focus, a:focus {
 
 /*songbar.....*/
 
+#download-button,#headphones-button {
+	cursor: pointer;
+}
+
 #pbutton{
 	cursor: pointer;
 }
 
-
+#step-back,#step-ahead{
+	cursor: pointer;
+}
 #songb-ctrl>div {
 	width: 15%;
 }

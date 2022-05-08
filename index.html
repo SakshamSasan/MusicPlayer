@@ -331,13 +331,13 @@
          </div>
        </div>
 
-       <div class="col-4 col-lg m-3 p-2 pb-4 rounded playSong" data-time='04:34' data-pic='musicpics/amb.jpg' data-name="Ambitions">
-         <div class="le-img img-fit" style="background-image: url(musicpics/amb.jpg);"></div>
+       <div class="col-4 col-lg m-3 p-2 pb-4 rounded playSong" data-time='04:34' data-pic='musicpics/naichaidi.jpg' data-name="Nai Chaidi">
+         <div class="le-img img-fit" style="background-image: url(musicpics/naichaidi.jpg);"></div>
          <div class="w-100 text-wrap" style="color:white;">
           <br>
-           <p style="font-weight: bolder;">Ambitions</p>
+           <p style="font-weight: bolder;">Nai Chaidi</p>
            
-           04:34
+           03:24
          </div>
        </div>
        <div class="col-4 col-lg m-3 p-2 pb-4 rounded playSong" data-time='02:16' data-pic='musicpics/Fara.jpeg' data-name="Faraar">
@@ -401,11 +401,11 @@
     </div>
     <div class="col d-flex flex-column offset-1" >
       <div class="h-50 w-100 pt-2 d-flex justify-content-center align-items-center px-5" style="color:white;" id="songb-ctrl">
-        <div class="d-inline-block "><i class="fa-solid fa-shuffle"></i></div>
-        <div class="d-inline-block "><i class="fa-solid fa-backward-step"></i></div>
+        
+        <div class="d-inline-block" id="step-back"><i class="fa-solid fa-backward-step"></i></div>
         <div id="pbutton" class="d-inline-block "><i class="fa-solid fa-play"></i></div>
-        <div class="d-inline-block "><i class="fa-solid fa-forward-step"></i></div>
-        <div class="d-inline-block"><i class="fa-solid fa-repeat"></i></div>
+        <div class="d-inline-block" id="step-ahead"><i class="fa-solid fa-forward-step"></i></div>
+        
       </div>
 
       <div class="h-50 d-flex pt-2 justify-content-center align-content-end align-content-lg-center w-100" id="bar">
@@ -421,8 +421,8 @@
         </div>
 
         <div class="col-10 d-flex justify-content-center align-items-center pt-2" id="menu">
-          <div class="d-inline-block px-1"><i class="fa-solid fa-download"></i></div>
-          <div class="d-inline-block px-1"><i class="fa-solid fa-headphones-simple"></i></div>
+          <div class="d-inline-block px-1" id="download-button" onclick="alert(`The database doesn't support downloads at the moment`)"><i class="fa-solid fa-download"></i></div>
+          <div class="d-inline-block px-1" id="headphones-button" onclick="alert(`Use headphones for best listening experience`)"><i class="fa-solid fa-headphones-simple"></i></div>
           <div class="d-inline-block px-1"><i class="fa-solid fa-volume-high"></i></div>
           <div class="d-inline-block px-1" id="vbar">
             <div class="w-100 rounded d-inline-block align-middle vbar-son">
